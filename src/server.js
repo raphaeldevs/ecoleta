@@ -2,6 +2,9 @@ const express = require("express")
 const server = express()
 const nunjucks = require("nunjucks") // template engine
 
+//Database
+const database = require("./database/db")
+
 //configuração nunjucks
 // parâmetros: configure(pasta public, objeto com configurações)
 nunjucks.configure("src/views", {
