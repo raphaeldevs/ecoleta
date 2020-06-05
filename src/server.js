@@ -15,6 +15,9 @@ nunjucks.configure("src/views", {
 //configuração da pasta Public
 server.use(express.static("public"))
 
+//habilita o uso do request.body
+server.use(express.urlencoded({extended: true}))
+
 //liga o servidor
 server.listen(3000) //ouve a porta:3000
 
@@ -26,9 +29,15 @@ server.get("/", (request, response) => {
 
 //    PAGE: create-point
 server.get("/create-point", (request, response) => {
-  console.log(request.query)
-
   return response.render("create-point.html")
+})
+
+//    PAGE: save-point
+server.post("/savepoint", (request, response) => {
+  // request.body: corpo do formulário
+  console.log(request.body)
+
+  return response.send('ok')
 })
 
 //    PAGE: search-results
