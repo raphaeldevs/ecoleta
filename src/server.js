@@ -63,7 +63,7 @@ server.post("/savepoint", (request, response) => {
     console.log("Cadastrado com sucesso")
     console.log(this)
 
-    return response.send("OK")
+    return response.render("create-point.html", {saved: true})
   }
 
   database.run(query, values, afterInsertData)
@@ -74,7 +74,7 @@ server.get("/search", (request, response) => {
   //pegar os dados do banco de dados
   database.all(`SELECT * FROM places`, function (error, rows) {
     if (error) return console.log(error)
-    
+
     const total = rows.length
 
     //nunjucks
