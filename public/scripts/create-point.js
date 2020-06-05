@@ -99,6 +99,6 @@ function handleSelectedItem(event) {
   } else selectedItems.push(itemId)
 
   // * Atualizar o input: hidden com os campos selecionados 
-  collectedItems.value = selectedItems
+  collectedItems.value = selectedItems.join(', ') //adiciona espaço entre virgulas
 
 }
