@@ -15,8 +15,15 @@
   <main>
     {% if total > 0 %}
       <h4>
-        <strong>{{total}} pontos</strong>
-        encontrados
+        <strong>
+          {{total}} 
+        </strong>
+          {% if total == 1 %} ponto encontrado {%else%} pontos encontrados {% endif %}
+         para 
+        <strong 
+          style="text-transform: uppercase">
+          {{search}}
+        </strong>
       </h4>
 
       <div class="cards">
