@@ -38,8 +38,10 @@ server.get("/search", (request, response) => {
     console.log("Aqui estão seus registros")
     console.log(rows)
 
+    const total = rows.length
+
     //nunjucks
-    return response.render("search-results.html", { places: rows })
+    return response.render("search-results.html", { places: rows, total })
   })
 
 })
