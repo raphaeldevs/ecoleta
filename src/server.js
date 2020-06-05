@@ -71,14 +71,19 @@ server.post("/savepoint", (request, response) => {
 
 //    PAGE: search-results
 server.get("/search", (request, response) => {
+  const search = request.query.search
+
+  //se pesquisa vazia
+  if (search === "") return response.render("search-results.html", { total: 0 })
+
   //pegar os dados do banco de dados
-  database.all(`SELECT * FROM places`, function (error, rows) {
+  database.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function (error, rows) {
     if (error) return console.log(error)
 
     const total = rows.length
 
     //nunjucks
-    return response.render("search-results.html", { places: rows, total })
+    return response.render("search-results.html", { places: rows, total, search })
   })
 
 })
