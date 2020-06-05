@@ -92,8 +92,6 @@ function handleSelectedItem(event) {
   */
   if (alreadySelected >= 0) {
     //Filtra/Remove o item que é diferente.
-    console.log(selectedItems)
-
     const filteredItems = selectedItems.filter(item => item !== itemId)
 
     selectedItems = filteredItems
