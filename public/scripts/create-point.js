@@ -72,7 +72,7 @@ let selectedItems = []
 
 function handleSelectedItem(event) {
   const itemLi = event.target
-  const itemId = Number(itemLi.dataset.id) //Converte o id: String pra tipo Number
+  const itemId = itemLi.dataset.id
   const collectedItems = document.querySelector("[name=items]")
   
   //toggle class
@@ -102,8 +102,5 @@ function handleSelectedItem(event) {
 
   // * Atualizar o input: hidden com os campos selecionados 
   collectedItems.value = selectedItems
-
-  console.log(collectedItems.value);
-  
 
 }
