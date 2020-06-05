@@ -6,6 +6,7 @@
 
 {% block styles %}
   <link rel="stylesheet" href="/styles/create-point.css">
+  <link rel="stylesheet" href="/styles/modal.css">
   <link rel="stylesheet" href="/styles/responsive/create-point.css">
 {% endblock styles %}
 
@@ -125,6 +126,11 @@
       </button>
 
     </form>
+
+    {% if saved %}
+      {%include "partials/point-created.html"%}
+    {% endif %}
+
   </div>
 {% endblock content %}
 
