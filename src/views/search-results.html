@@ -14,17 +14,23 @@
   {% include "partials/page-header.html" %}
   <main>
     {% if total > 0 %}
-      <h4>
-        <strong>
-          {{total}} 
-        </strong>
-          {% if total == 1 %} ponto encontrado {%else%} pontos encontrados {% endif %}
-         para 
-        <strong 
-          style="text-transform: uppercase">
-          {{search}}
-        </strong>
-      </h4>
+      {% if viewAll %}
+        <h4>
+          <strong> {{total}} </strong>
+            {% if total == 1 %} ponto encontrado 
+            {%else%} pontos encontrados {% endif %}
+        </h4>
+        {% else %}
+          <h4>
+            <strong> {{total}} </strong>
+              {% if total == 1 %} ponto encontrado 
+              {%else%} pontos encontrados {% endif %} para
+            <strong 
+              style="text-transform: uppercase">
+              {{search}}
+            </strong>
+          </h4>
+      {% endif %}
 
       <div class="cards">
 
