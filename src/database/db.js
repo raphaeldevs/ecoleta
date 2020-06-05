@@ -7,7 +7,7 @@ const db = new sqlite3.Database("./src/database/database.db")
 db.serialize(() => {
   // com comandos SQL:
   
-  // criar uma tabela
+  // 1. criar uma tabela
   db.run(`
     CREATE TABLE IF NOT EXISTS places (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -21,7 +21,7 @@ db.serialize(() => {
     );
   `)
 
-  // inserir dados na tabela
+  // 2. inserir dados na tabela
   const query = `
     INSERT INTO places (
       image,
@@ -51,8 +51,21 @@ db.serialize(() => {
     console.log(this)
   }
 
-  db.run(query, values, afterInsertData)
-  // consultar dados da tabela
+  //db.run(query, values, afterInsertData)
 
-  // deletar um dado da tabele
+  // 3. consultar dados da tabela
+  db.all(`SELECT * FROM places`, function (error, rows) {
+    if (error) return console.log(error)
+
+    console.log("Aqui estão seus registros")
+    console.log(rows)
+  })
+
+  // 4. deletar um dado da tabela
+  /* db.run(`DELETE FROM places WHERE id = ?`,[1], function (error) {
+    if (error) return console.log(error)
+    
+    console.log("Registro deletado com sucesso")
+  }) */
+  
 })
