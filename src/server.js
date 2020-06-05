@@ -31,5 +31,15 @@ server.get("/create-point", (request, response) => {
 
 //    PAGE: search-results
 server.get("/search", (request, response) => {
-  return response.render("search-results.html")
+  //pegar os dados do banco de dados
+  database.all(`SELECT * FROM places`, function (error, rows) {
+    if (error) return console.log(error)
+
+    console.log("Aqui estão seus registros")
+    console.log(rows)
+
+    //nunjucks
+    return response.render("search-results.html", { places: rows })
+  })
+
 })
