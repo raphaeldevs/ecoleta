@@ -118,10 +118,26 @@
   transition: opacity 400ms;
 }
 
+#modal .content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* save point */
 #modal.point .content {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+#modal a.all {
+  margin-top: 10px;
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+#modal a.all:hover {
+  color: white;
 }
 
 #modal.point h1 {
