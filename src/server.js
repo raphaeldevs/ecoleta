@@ -26,6 +26,8 @@ server.get("/", (request, response) => {
 
 //    PAGE: create-point
 server.get("/create-point", (request, response) => {
+  console.log(request.query)
+
   return response.render("create-point.html")
 })
 
