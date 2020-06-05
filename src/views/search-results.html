@@ -13,7 +13,6 @@
 {% block content %}
   {% include "partials/page-header.html" %}
   <main>
-
     <h4>
       <strong>2 pontos</strong>
       encontrados
@@ -21,36 +20,23 @@
 
     <div class="cards">
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1480359014333-3935abd88252?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="Colectoria"/>
+      {% for place in places %}
+        <div class="card">
+          <img src={{place.image}} alt={{place.image}}/>
 
-        <div class="card-body">
-          <h1>Colectoria</h1>
-          <h3>Resíduos Eletrônicos, Lâmpadas</h3>
-          <p>
-            São Luís, Maranhão
-            <br/>
-            Uma rua qualquer, Um bairro
-            <br/>
-            N° 11
-          </p>
+          <div class="card-body">
+            <h1>{{place.name}}</h1>
+            <h3>{{place.items}}</h3>
+            <p>
+              {{place.city}}, {{place.state}}
+              <br/>
+              {{place.address}}
+              <br/>
+              {{place.address2}}
+            </p>
+          </div>
         </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9" alt="Colectoria">
-        <div class="card-body">
-          <h1>Papersider</h1>
-          <h3>Papéis e Papelão</h3>
-          <p>
-            São Luís, Maranhão
-            <br/>
-            Rua Petrônio Portela, Forquilha
-            <br/>
-            N° 9
-          </p>
-        </div>
-      </div>
+      {% endfor %}
 
     </div>
 
