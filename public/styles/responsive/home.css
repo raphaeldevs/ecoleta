@@ -1,0 +1,54 @@
+@media (min-width: 1700px) {
+  #page-home {
+    background-position: 40vw;
+  }
+}
+
+@media (max-width: 900px) {
+  #page-home { background-position: 70vw; }
+
+  #page-home .content {
+    align-items: center;
+  }
+
+  #page-home header a {
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+
+    width: 100%;
+    justify-content: center;
+
+    transform: translateX(-50%);
+  }
+
+  #page-home main {
+    align-items: center;
+    flex: 0;
+    margin-top: 40px;
+  }
+
+  #page-home main a { margin-top: 40px; }
+
+  #page-home main p { text-align: center; }
+
+}
+
+@media (max-width: 760px) {
+  #page-home {
+    background-position-y: 200px;
+    /* height: auto; */
+  }
+
+  #modal .content {
+    width: auto;  
+
+    margin-bottom: 48px;
+  }
+
+  body, html {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+}

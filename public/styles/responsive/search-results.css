@@ -1,0 +1,17 @@
+@media (max-width: 900px) {
+
+  #page-search-results .cards {
+    grid-template-columns: 1fr;
+  }
+
+  #page-search-results .cards img {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 500px) {
+  body::after {
+    display: none;
+  }
+}

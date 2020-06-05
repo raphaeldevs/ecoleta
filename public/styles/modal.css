@@ -1,0 +1,119 @@
+#modal {
+  width: 100vw;
+  height: 100%;
+
+  position: fixed;
+  top: 0;
+
+  background-color: #0e0a14ef;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 400ms;
+}
+
+#modal .content {
+  width: 420px;
+
+  color: white;
+}
+
+#modal .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 48px;
+}
+
+#modal .header button {
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+
+  font-size: 0.01px;
+
+  border: 0;
+
+  cursor: pointer;
+
+  background: url("../assets/x.svg");
+
+  /* Impede que o usuário selecione o texto */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ and Edge */
+  user-select: none; /* Standard syntax */
+}
+
+#modal .header button:hover {
+  filter: brightness(50%)
+}
+
+#modal .header h1 {
+  color: white;
+
+  font-size: 36px;
+  line-height: 42px;
+}
+
+#modal form label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  line-height: 16px;
+}
+
+#modal form .field {
+  display: flex;
+}
+
+#modal form input {
+  flex: 1;
+
+  outline: none;
+  border-radius: 8px 0 0 8px;
+  border: 0;
+
+  padding: 16px 24px;
+  
+  font-size: 16px;
+  color: #6c6c80;
+
+  background-color: var(--bg-color);
+}
+
+#modal form button {
+  width: 72px;
+  height: 72px;
+
+  border: 0;
+  border-radius: 0 40px 40px 0;
+
+  background-color: var(--primary-color);
+  transition: background-color 400ms;
+
+    cursor: pointer;
+
+  /* Impede que o usuário selecione o texto */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ and Edge */
+  user-select: none; /* Standard syntax */
+}
+
+#modal form button:hover {
+  background-color: #2fb85e;
+}
+
+#modal form button:focus {
+  outline: none;
+}
+
+#modal.hide {
+  display: none;
+  transition: opacity 400ms;
+}

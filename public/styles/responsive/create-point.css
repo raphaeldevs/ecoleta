@@ -1,0 +1,41 @@
+@media (max-width: 760px) {
+
+  #page-create-point form {
+    padding: 30px;
+    margin: 30px 0 auto;
+  }
+
+  #page-create-point h1, 
+  #page-create-point form fieldset legend
+   { text-align: center; }
+
+  #page-create-point form fieldset legend {
+    flex-direction: column;
+  }
+
+  #page-create-point form fieldset span { 
+    margin-top: 10px;
+  }
+
+  #page-create-point form .field-group {
+    flex-direction: column;
+  }
+
+  #page-create-point form .field {
+    margin: 0 0 30px;
+  }
+
+}
+
+@media (max-width: 550px) {
+  .items-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #page-create-point button {
+    position: relative;
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
+}
