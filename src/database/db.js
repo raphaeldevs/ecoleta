@@ -10,7 +10,13 @@ db.serialize(() => {
   // criar uma tabela
   db.run(`
     CREATE TABLE IF NOT EXISTS places (
-      id INTEGER PRIMARY KEY AUTOINCREMENT
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      image TEXT,
+      address TEXT,
+      address2 TEXT,
+      state TEXT,
+      city TEXT,
+      items TEXT
     );
   `)
 
