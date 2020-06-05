@@ -29,7 +29,7 @@ server.get("/", (request, response) => {
 
 //    PAGE: create-point
 server.get("/create-point", (request, response) => {
-  return response.render("create-point.html")
+  return response.render("create-point.html", { saved: true })
 })
 
 //    PAGE: save-point
@@ -63,7 +63,7 @@ server.post("/savepoint", (request, response) => {
     console.log("Cadastrado com sucesso")
     console.log(this)
 
-    return response.render("create-point.html", {saved: true})
+    return response.render("create-point.html")
   }
 
   database.run(query, values, afterInsertData)
