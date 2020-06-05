@@ -34,10 +34,39 @@ server.get("/create-point", (request, response) => {
 
 //    PAGE: save-point
 server.post("/savepoint", (request, response) => {
-  // request.body: corpo do formulário
-  console.log(request.body)
+  // insere dados na tabela
+  const query = `
+    INSERT INTO places (
+      image,
+      name,
+      address,
+      address2,
+      state,
+      city,
+      items
+    ) VALUES (?,?,?,?,?,?,?);
+  `
 
-  return response.send('ok')
+  const values = [
+    request.body.image,
+    request.body.name,
+    request.body.address,
+    request.body.address2,
+    request.body.state,
+    request.body.city,
+    request.body.items
+  ]
+
+  function afterInsertData(error) {
+    if (error) return console.log(error)
+
+    console.log("Cadastrado com sucesso")
+    console.log(this)
+
+    return response.send("OK")
+  }
+
+  database.run(query, values, afterInsertData)
 })
 
 //    PAGE: search-results
@@ -45,10 +74,7 @@ server.get("/search", (request, response) => {
   //pegar os dados do banco de dados
   database.all(`SELECT * FROM places`, function (error, rows) {
     if (error) return console.log(error)
-
-    console.log("Aqui estão seus registros")
-    console.log(rows)
-
+    
     const total = rows.length
 
     //nunjucks
