@@ -46,16 +46,4 @@ Eu queria focar no Javascript e aprender novas abordagens ao fazer um projeto. Q
   <li>Pratiquei Git e consegui fazer o deploy desse projeto no Heroku. Inclusive usei o vídeo da Rocketseat sobre isso que está no Youtube</li>
 </ul>
 
-##### CEP Promise
-  Uma coisa que eu achei legal foi usar o CEP Promise criado pelo Filipe Deschamps (e colaboradores) no formulário de criação de um novo ponto de coleta. A lógica que eu elaborei foi a seguinte:
-  <ol>
-    <li>Adicionar um <code>eventListener</code> junto com uma função de debounce no input que recebe o CEP.</li>
-    <li>Recuperar os dados e chamar a função <code>cep()</code> do CEP Promise.</li>
-    <li>Recuperar a resposta do CEP Promise e se for válida, preencher os campos de endereço, estado e cidade.</li>
-    <li>Se o CEP não for válido, uso a função <code>preventDefault()</code> para impededir o envio do formulário e adiciono uma representação visual do erro com CSS.</li>
-  </ol>
-
-<h3>A minha versão está na branch myVersion</h3>
-<h4>
-👨‍💻 <a href="https://ecoleta-raphaeldevs.herokuapp.com/">Link para o projeto no Heroku</a>
-</h4>
+<h4>Essa é a branch que contém o a minha versão final</h4>
