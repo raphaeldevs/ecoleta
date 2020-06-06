@@ -199,3 +199,12 @@ form button:hover {
   -ms-user-select: none; /* IE 10+ and Edge */
   user-select: none; /* Standard syntax */
 }
+
+/* Error CEP */
+.error {
+  background-color: rgba(255, 0, 0, 0.322);
+}
+
+.success {
+  background-color: rgba(8, 184, 32, 0.322);
+}
