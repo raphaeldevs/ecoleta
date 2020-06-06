@@ -38,6 +38,7 @@ server.post("/savepoint", (request, response) => {
   const query = `
     INSERT INTO places (
       image,
+      cep,
       name,
       address,
       address2,
@@ -49,6 +50,7 @@ server.post("/savepoint", (request, response) => {
 
   const values = [
     request.body.image,
+    request.body.cep,
     request.body.name,
     request.body.address,
     request.body.address2,
