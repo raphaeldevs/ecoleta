@@ -45,7 +45,7 @@ server.post("/savepoint", (request, response) => {
       state,
       city,
       items
-    ) VALUES (?,?,?,?,?,?,?);
+    ) VALUES (?,?,?,?,?,?,?,?);
   `
 
   const values = [
