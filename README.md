@@ -12,4 +12,6 @@
 
 [========]
 
-##### O Ecoleta foi um projeto proposto na trilha Starter da Next Level Week #1, organizada pela Rocketseat
+<h5 align="center">
+ O Ecoleta foi um projeto proposto na trilha Starter da Next Level Week #1, organizada pela Rocketseat
+</h5>
