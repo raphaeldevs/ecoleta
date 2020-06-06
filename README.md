@@ -9,7 +9,7 @@
 <br />
 
 <blockquote align="center">
-  O Ecoleta o projeto proposto na trilha Starter da Next Level Week #1, organizada pela Rocketseat.
+  O Ecoleta foi o projeto proposto na trilha Starter da Next Level Week #1, organizada pela Rocketseat durante a semana internacional do meio ambiente
 </blockquote> <br/>
 
 
