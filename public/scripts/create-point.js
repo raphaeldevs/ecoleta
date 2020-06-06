@@ -122,14 +122,15 @@ document
 
 let time;
 function handleKeyUp(event) {
-  console.log("oii")
-  clearTimeout(time)
+  if(event.target.value.length < 8) {
+    clearTimeout(time)
 
-  time = setTimeout(() => {
-    fetchCep()
-  }, 1000);
+    time = setTimeout(() => {
+      fetchCep()
+    }, 1000);
+  }
 }
-let test
+
 function fetchCep() {
   const cepInput = document.querySelector("[name=cep]")
   const ufSelect = document.querySelector("[name=uf]")
@@ -141,11 +142,30 @@ function fetchCep() {
       const options = [...ufSelect.options]
       const index = options.find(state => state.dataset.sigla == response.state).index
 
+      cepInput.classList.remove('error')
+      cepInput.classList.add('success')
+
       
       ufSelect.selectedIndex = index;
       getCities(null, response.state, response.city)
 
       addressInput.value = `${response.street}, ${response.neighborhood}`
     })
-    .catch(e => console.log(e))
+    .catch(e => {
+      cepInput.classList.add('error')
+    })
+}
+
+document
+  .querySelector("form")
+  .addEventListener("submit", validateCep(event))
+
+function validateCep(event) {
+  const cepInput = document.querySelector("[name=cep]")
+  
+  if (cepInput.classList.contains('error')) {
+    cepInput.focus()
+    event.preventDefault();
+    return false
+  }
 }
