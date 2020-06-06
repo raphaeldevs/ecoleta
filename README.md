@@ -14,7 +14,7 @@
 
 
 #### Minha história na Next Level Week
-Eu me inscrevi na trilha Starter da Next Level Week, assim que foi anunciada.Eu realmente estava com GRANDES espectativas com esse evento e todas elas foram atendidas.
+Eu me inscrevi na trilha Starter da Next Level Week, assim que foi anunciada. Eu realmente estava com GRANDES espectativas com esse evento e todas elas foram atendidas.
 Eu queria focar no Javascript e aprender novas abordagens ao fazer um projeto. Quando entrei no evento já tinha boas noções de HTML, CSS e Javascript, então foi muito gostoso acompanhar a criação do projeto e me permiti aprender novas coisas, foi demais!
 
 ##### Nesse evento, eu...
