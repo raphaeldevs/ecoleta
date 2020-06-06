@@ -27,13 +27,13 @@
           <h2>Dados da entidade</h2>
         </legend>
 
-        <div class="field-group">
-          <div class="field">
-            <label for="name">Nome da entidade</label>
-            <input type="text" name="name" required="required"/>
-          </div>
+        <div class="field">
+          <label for="name">Nome da entidade</label>
+          <input type="text" name="name" required="required"/>
+        </div>
 
-          <div class="field">
+        <div class="field-group">
+         <div class="field">
             <label for="image">Imagem da entidade</label>
             <input 
               type="url" 
@@ -42,6 +42,17 @@
               placeholder="http:// ..."
               />
           </div>
+
+          <div class="field">
+            <label for="cep">CEP (somente números)</label>
+            <input 
+              type="number"
+              maxlength="8"
+              name="cep" 
+              required="required"
+              />
+          </div>
+
         </div>
 
         <div class="field-group">
