@@ -20,7 +20,7 @@ function populateUFs() {
 
     for (const state of states) {
       ufSelect.innerHTML += `
-        <option value="${state.id}">${state.nome}</option>
+        <option data-sigla="${state.sigla}" value="${state.id}">${state.nome}</option>
       `
     }
   } )
@@ -28,15 +28,16 @@ function populateUFs() {
 
 populateUFs()
 
-function getCities(event) {
+function getCities(event, state, city) {
   const citiesSelect = document.querySelector("[name=city]")
   const stateInput = document.querySelector("[name=state]")
+  const ufSelect = document.querySelector("select[name=uf]")
 
-  const ufValue = event.target.value;
-  
-  const indexOfSelectedState = event.target.selectedIndex
-  stateInput.value = event.target.options[indexOfSelectedState].text
-  
+  const ufValue = event == null ? state : event.target.value;
+
+  const indexOfSelectedState = ufSelect.selectedIndex
+  stateInput.value = ufSelect.options[indexOfSelectedState].text
+
   const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufValue}/municipios`
 
   //Mensagem de carregamento
@@ -44,17 +45,27 @@ function getCities(event) {
   citiesSelect.disabled = true;
 
   fetch(url)
-  .then(response => response.json())
-  .then(cities => {
-    citiesSelect.innerHTML = `<option>Selecione a cidade</option>`
+    .then(response => response.json())
+    .then(cities => {
 
-    for (const city of cities) {
-      citiesSelect.innerHTML += 
-      `<option value="${city.nome}">${city.nome}</option>`
-    }
-    citiesSelect.disabled = false
+      citiesSelect.innerHTML = `<option>Selecione a cidade</option>`
 
-  })
+      for (const city of cities) {
+        citiesSelect.innerHTML += `
+      <option id="${city.nome}">${city.nome}</option>
+    `
+      }
+      citiesSelect.disabled = false
+
+
+      if (city) {
+        const options = [...citiesSelect.options]
+        const index = options.find(cidade => cidade.id == city).index
+
+        citiesSelect.selectedIndex = index;
+        console.log('ok')
+      }
+    })
 }
 
 document
@@ -101,4 +112,40 @@ function handleSelectedItem(event) {
   // * Atualizar o input: hidden com os campos selecionados 
   collectedItems.value = selectedItems.join(', ') // o método join() vai adicionar um espaço a direita da virgula
 
+}
+
+// CEP Promise
+
+document
+  .querySelector("[name=cep]")
+  .addEventListener("keyup", handleKeyUp)
+
+let time;
+function handleKeyUp(event) {
+  console.log("oii")
+  clearTimeout(time)
+
+  time = setTimeout(() => {
+    fetchCep()
+  }, 1000);
+}
+let test
+function fetchCep() {
+  const cepInput = document.querySelector("[name=cep]")
+  const ufSelect = document.querySelector("[name=uf]")
+  const addressInput = document.querySelector("[name=address]")
+  const cepValue = cepInput.value;
+
+  cep(cepValue)
+    .then(response => {
+      const options = [...ufSelect.options]
+      const index = options.find(state => state.dataset.sigla == response.state).index
+
+      
+      ufSelect.selectedIndex = index;
+      getCities(null, response.state, response.city)
+
+      addressInput.value = `${response.street}, ${response.neighborhood}`
+    })
+    .catch(e => console.log(e))
 }
