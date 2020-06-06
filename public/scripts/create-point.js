@@ -142,8 +142,7 @@ function fetchCep() {
       const options = [...ufSelect.options]
       const index = options.find(state => state.dataset.sigla == response.state).index
 
-      cepInput.classList.remove('error')
-      cepInput.classList.add('success')
+      cepInput.className = 'success'
 
       
       ufSelect.selectedIndex = index;
@@ -152,20 +151,29 @@ function fetchCep() {
       addressInput.value = `${response.street}, ${response.neighborhood}`
     })
     .catch(e => {
-      cepInput.classList.add('error')
+      cepInput.className = 'error'
     })
 }
 
 document
   .querySelector("form")
-  .addEventListener("submit", validateCep(event))
+  .addEventListener("submit", validateCep)
 
 function validateCep(event) {
   const cepInput = document.querySelector("[name=cep]")
-  
-  if (cepInput.classList.contains('error')) {
-    cepInput.focus()
+
+  if (cepInput.className == 'error' || cepInput.className == "") {
     event.preventDefault();
+    cepInput.focus()
+    cepInput.animate([
+      { opacity: 0 },
+      { opacity: 100 },
+    ], {
+      iterations: 3,
+      duration: 80,
+      delay: 200
+    })
+    
     return false
   }
 }
