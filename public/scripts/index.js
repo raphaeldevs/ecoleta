@@ -1,4 +1,4 @@
-const buttonSearch = document.querySelector("#page-home main button");
+const buttonSearch = document.querySelector("#page-home main button")
 const modal = document.querySelector("#modal")
 const close = document.querySelector("#modal .header button")
 
