@@ -19,7 +19,7 @@ server.use(express.static("public"))
 server.use(express.urlencoded({extended: true}))
 
 //liga o servidor
-server.listen(3000) //ouve a porta:3000
+//server.listen(3000) //ouve a porta:3000
 
 //  * Configurar caminhos da aplicação
 //    PAGE: home
