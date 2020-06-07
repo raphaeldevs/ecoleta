@@ -99,5 +99,5 @@ server.get("/search", (request, response) => {
 
 //    PAGE: 404
 server.get('*', (request, response)=> {
-  response.send('404: not found')
+  response.render("404.html")
 })
