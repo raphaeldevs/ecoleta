@@ -98,6 +98,6 @@ server.get("/search", (request, response) => {
 })
 
 //    PAGE: 404
-server.get('*', (request, response)=> {
+server.get('*', (request, response) => {
   response.render("404.html")
 })
