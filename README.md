@@ -37,7 +37,7 @@ Eu queria focar no Javascript e aprender novas abordagens ao fazer um projeto. Q
   <li>Tive o primeiro contato com um banco de dados, no caso, o SQLite. Inclusive, usei o <code>DB Browser for SQLite</code> pra fazer várias coisas como:
     <ul>
       <li>Ver as tabelas do banco de dados.</li>
-      <li>Rodar código SQL, os mesmos que usei no método run() no Javascript (foi legal porque as coisas fizeram MUITO).</li>
+      <li>Rodar código SQL, os mesmos que usei no método run() no Javascript (foi legal porque as coisas fizeram MUITO sentido).</li>
     </ul>
   </li>
 
@@ -52,7 +52,7 @@ Eu queria focar no Javascript e aprender novas abordagens ao fazer um projeto. Q
     <li>Adicionar um <code>eventListener</code> junto com uma função de debounce no input que recebe o CEP.</li>
     <li>Recuperar os dados e chamar a função <code>cep()</code> do CEP Promise.</li>
     <li>Recuperar a resposta do CEP Promise e se for válida, preencher os campos de endereço, estado e cidade.</li>
-    <li>Se o CEP não for válido, uso a função <code>preventDefault()</code> para impededir o envio do formulário e adiciono uma representação visual do erro com CSS.</li>
+    <li>Se o CEP não for válido, uso a função <code>preventDefault()</code> para impedir o envio do formulário e adiciono uma representação visual do erro com CSS.</li>
   </ol>
 
 <h3>A minha versão está na branch myVersion</h3>
