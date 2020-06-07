@@ -37,7 +37,7 @@ Eu queria focar no Javascript e aprender novas abordagens ao fazer um projeto. Q
   <li>Tive o primeiro contato com um banco de dados, no caso, o SQLite. Inclusive, usei o <code>DB Browser for SQLite</code> pra fazer várias coisas como:
     <ul>
       <li>Ver as tabelas do banco de dados.</li>
-      <li>Rodar código SQL, os mesmos que usei no método run() no Javascript (foi legal porque as coisas fizeram MUITO).</li>
+      <li>Rodar código SQL, os mesmos que usei no método run() no Javascript (foi legal porque as coisas fizeram MUITO sentido).</li>
     </ul>
   </li>
 
