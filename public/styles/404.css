@@ -70,7 +70,7 @@
 }
 
 #page-404 main a.link:hover {
-  color: #2fb86e;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 @keyframes back {
