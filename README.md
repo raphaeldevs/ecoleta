@@ -28,7 +28,7 @@ Eu queria focar no Javascript e aprender novas abordagens ao fazer um projeto. Q
     </ul>
   </li>
 
-  <li>Aprendi a usar a Fetch API, uma forma mais elegante de fazer buscas se comparado ao que eu já fazia com o XMLHttpRequest.</li>
+  <li>Aprendi a usar a Fetch API, uma forma mais elegante de fazer buscas se comparado ao que eu já fazia com o XMLHttpRequest e Promises</li>
 
   <li>Usei o conceito de Debounce quando fiz a integração com o CEP Promise criado pelo Filipe Deschamps (e colaboradores).</li>
 
