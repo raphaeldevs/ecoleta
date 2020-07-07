@@ -2,28 +2,28 @@ function populateUFs() {
   const ufSelect = document.querySelector("select[name=uf]")
 
   fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
-  .then( response => response.json())
-  .then( states => {
+    .then(response => response.json())
+    .then(states => {
 
-    states.sort( (a, b) => {
-      const returnValue = value => {
-        value = value.replace(/[àáâãäå]/, "a")
+      states.sort((a, b) => {
+        const returnValue = value => {
+          value = value.replace(/[àáâãäå]/, "a")
 
-        return value
-      } //Substitui caracteres especiais para igualdade na verificação
+          return value
+        } //Substitui caracteres especiais para igualdade na verificação
 
-      if (returnValue(a.nome) > returnValue(b.nome)) return 1
-      else return -1
+        if (returnValue(a.nome) > returnValue(b.nome)) return 1
+        else return -1
 
-      return 0
-    }) //Ordena os estados em ordem alfabética
+        return 0
+      }) //Ordena os estados em ordem alfabética
 
-    for (const state of states) {
-      ufSelect.innerHTML += `
+      for (const state of states) {
+        ufSelect.innerHTML += `
         <option data-sigla="${state.sigla}" value="${state.id}">${state.nome}</option>
       `
-    }
-  } )
+      }
+    })
 }
 
 populateUFs()
@@ -85,7 +85,7 @@ function handleSelectedItem(event) {
   const itemLi = event.target
   const itemId = itemLi.dataset.id
   const collectedItems = document.querySelector("[name=items]")
-  
+
   //toggle class
   itemLi.classList.toggle("selected")
 
@@ -93,9 +93,9 @@ function handleSelectedItem(event) {
    
     * Verificar se existem items selecionados
       * se sim, pegar os itens selecionados */
-    
+
   const alreadySelected = selectedItems.findIndex(item => item === itemId)
-  
+
   /* 
     * Verificar se o item já existe na coleção
     * se sim, remover da seleção
@@ -119,10 +119,10 @@ function handleSelectedItem(event) {
 document
   .querySelector("[name=cep]")
   .addEventListener("keyup", handleKeyUp)
- 
+
 let time
 function handleKeyUp(event) {
-  if(event.target.value.length < 8) {
+  if (event.target.value.length < 8) {
     clearTimeout(time)
 
     time = setTimeout(() => {
@@ -144,7 +144,7 @@ function fetchCep() {
 
       cepInput.className = 'success'
 
-      
+
       ufSelect.selectedIndex = index
       getCities(null, response.state, response.city)
 
@@ -166,7 +166,7 @@ function validateCep(event) {
     event.preventDefault()
 
     cepInput.focus()
-    
+
     cepInput.animate([
       { opacity: 0 },
       { opacity: 100 },
@@ -175,7 +175,7 @@ function validateCep(event) {
       duration: 80,
       delay: 200
     })
-    
+
     return false
   }
 }
