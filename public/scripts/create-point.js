@@ -5,11 +5,11 @@ function populateUFs() {
   .then( response => response.json())
   .then( states => {
 
-    states.sort((a, b) => {
+    states.sort( (a, b) => {
       const returnValue = value => {
-        value = value.replace(/[àáâãäå]/, "a");
+        value = value.replace(/[àáâãäå]/, "a")
 
-        return value;
+        return value
       } //Substitui caracteres especiais para igualdade na verificação
 
       if (returnValue(a.nome) > returnValue(b.nome)) return 1
@@ -33,7 +33,7 @@ function getCities(event, state, city) {
   const stateInput = document.querySelector("[name=state]")
   const ufSelect = document.querySelector("select[name=uf]")
 
-  const ufValue = event == null ? state : event.target.value;
+  const ufValue = event == null ? state : event.target.value
 
   const indexOfSelectedState = ufSelect.selectedIndex
   stateInput.value = ufSelect.options[indexOfSelectedState].text
@@ -42,7 +42,7 @@ function getCities(event, state, city) {
 
   //Mensagem de carregamento
   citiesSelect.innerHTML = `<option>Carregando..</option>`
-  citiesSelect.disabled = true;
+  citiesSelect.disabled = true
 
   fetch(url)
     .then(response => response.json())
@@ -62,7 +62,7 @@ function getCities(event, state, city) {
         const options = [...citiesSelect.options]
         const index = options.find(cidade => cidade.id == city).index
 
-        citiesSelect.selectedIndex = index;
+        citiesSelect.selectedIndex = index
         console.log('ok')
       }
     })
@@ -119,15 +119,15 @@ function handleSelectedItem(event) {
 document
   .querySelector("[name=cep]")
   .addEventListener("keyup", handleKeyUp)
-
-let time;
+ 
+let time
 function handleKeyUp(event) {
   if(event.target.value.length < 8) {
     clearTimeout(time)
 
     time = setTimeout(() => {
       fetchCep()
-    }, 1000);
+    }, 1000)
   }
 }
 
@@ -135,7 +135,7 @@ function fetchCep() {
   const cepInput = document.querySelector("[name=cep]")
   const ufSelect = document.querySelector("[name=uf]")
   const addressInput = document.querySelector("[name=address]")
-  const cepValue = cepInput.value;
+  const cepValue = cepInput.value
 
   cep(cepValue)
     .then(response => {
@@ -145,7 +145,7 @@ function fetchCep() {
       cepInput.className = 'success'
 
       
-      ufSelect.selectedIndex = index;
+      ufSelect.selectedIndex = index
       getCities(null, response.state, response.city)
 
       addressInput.value = `${response.street}, ${response.neighborhood}`
@@ -163,8 +163,10 @@ function validateCep(event) {
   const cepInput = document.querySelector("[name=cep]")
 
   if (cepInput.className == 'error' || cepInput.className == "") {
-    event.preventDefault();
+    event.preventDefault()
+
     cepInput.focus()
+    
     cepInput.animate([
       { opacity: 0 },
       { opacity: 100 },
