@@ -2,9 +2,9 @@
   <img width="300px" src="public/assets/logo.svg"/>
 </h1>
 
-<h3 align="center">
+<h2 align="center">
   Projeto desenvolvido na Next Level Week #1
-</h3>
+</h2>
 
 <br />
 
@@ -13,11 +13,11 @@
 </blockquote> <br/>
 
 
-#### Minha história na Next Level Week
+### Minha história na Next Level Week
 Eu me inscrevi na trilha Starter da Next Level Week, assim que foi anunciada. Eu realmente estava com GRANDES espectativas com esse evento e todas elas foram atendidas.
 Eu queria focar no Javascript e aprender novas abordagens ao fazer um projeto. Quando entrei no evento já tinha boas noções de HTML, CSS e Javascript, então foi muito gostoso acompanhar a criação do projeto e me permiti aprender novas coisas, foi demais!
 
-##### Nesse evento, eu...
+### Nesse evento, eu...
 <ul>
   <li>Aprendi abordagens diferentes no CSS como:
     <ul>
@@ -46,12 +46,7 @@ Eu queria focar no Javascript e aprender novas abordagens ao fazer um projeto. Q
   <li>Pratiquei Git e consegui fazer o deploy desse projeto no Heroku. Inclusive usei o vídeo da Rocketseat sobre isso que está no Youtube</li>
 </ul>
 
-<h4>Essa é a branch que contém o a minha versão final</h4>
-
-  <li>Pratiquei Git e consegui fazer o deploy desse projeto no Heroku. Inclusive usei o vídeo da Rocketseat sobre isso que está no Youtube</li>
-</ul>
-
-##### CEP Promise
+### CEP Promise
   Uma coisa que eu achei legal foi usar o CEP Promise criado pelo Filipe Deschamps (e colaboradores) no formulário de criação de um novo ponto de coleta. A lógica que eu elaborei foi a seguinte:
   <ol>
     <li>Adicionar um <code>eventListener</code> junto com uma função de debounce no input que recebe o CEP.</li>
@@ -59,8 +54,3 @@ Eu queria focar no Javascript e aprender novas abordagens ao fazer um projeto. Q
     <li>Recuperar a resposta do CEP Promise e se for válida, preencher os campos de endereço, estado e cidade.</li>
     <li>Se o CEP não for válido, uso a função <code>preventDefault()</code> para impedir o envio do formulário e adiciono uma representação visual do erro com CSS.</li>
   </ol>
-
-<h3>A minha versão está na branch myVersion</h3>
-<h4>
-👨‍💻 <a href="https://ecoleta-raphaeldevs.herokuapp.com/">Link para o projeto no Heroku</a>
-</h4>
