@@ -46,6 +46,11 @@ Eu queria focar no Javascript e aprender novas abordagens ao fazer um projeto. Q
   <li>Pratiquei Git e consegui fazer o deploy desse projeto no Heroku. Inclusive usei o vídeo da Rocketseat sobre isso que está no Youtube</li>
 </ul>
 
+<h4>Essa é a branch que contém o a minha versão final</h4>
+
+  <li>Pratiquei Git e consegui fazer o deploy desse projeto no Heroku. Inclusive usei o vídeo da Rocketseat sobre isso que está no Youtube</li>
+</ul>
+
 ##### CEP Promise
   Uma coisa que eu achei legal foi usar o CEP Promise criado pelo Filipe Deschamps (e colaboradores) no formulário de criação de um novo ponto de coleta. A lógica que eu elaborei foi a seguinte:
   <ol>

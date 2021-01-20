@@ -19,7 +19,7 @@ server.use(express.static("public"))
 server.use(express.urlencoded({extended: true}))
 
 //liga o servidor
-server.listen(process.env.PORT || 3000) //ouve a porta:3000
+server.listen(process.env.PORT || 3000) //ouve a porta 3000
 
 //  * Configurar caminhos da aplicação
 //    PAGE: home
@@ -45,7 +45,7 @@ server.post("/savepoint", (request, response) => {
       state,
       city,
       items
-    ) VALUES (?,?,?,?,?,?,?,?);
+    ) VALUES (?,?,?,?,?,?,?,?)
   `
 
   const values = [
@@ -75,7 +75,7 @@ server.post("/savepoint", (request, response) => {
 server.get("/search", (request, response) => {
   let search = request.query.search
   let seachQuery = `SELECT * FROM places WHERE city LIKE '%${search}%'`
-  let viewAll = false;
+  let viewAll = false
 
   //se pesquisa vazia
   if (search === "") return response.render("search-results.html", { total: 0 })
@@ -95,4 +95,9 @@ server.get("/search", (request, response) => {
     return response.render("search-results.html", { places: rows, total, search, viewAll })
   })
 
+})
+
+//    PAGE: 404
+server.get('*', (request, response) => {
+  response.render("404.html")
 })

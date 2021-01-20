@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% set pageId = "page-404" %} {# Variável #}
+
+<!-- Título da página -->
+{% block title %}
+<title>Ops! Página não encontrada</title>
+{% endblock title %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/styles/404.css">
+{% endblock styles %}
+
+{# <div id="page-home"> #}
+
+{% block content %}
+  <div class="content">
+    <!-- Container -->
+
+    <header>
+      <!-- Cabeçalho -->
+      <img src="/assets/logo.svg" alt="Logomarca Ecoleta">
+    </header>
+
+    <main>
+      <img src="/assets/404.png" alt="">
+      <a class="animated">
+        <span></span>
+        <!-- Ícone -->
+        Volte para home
+      </a>
+      <a class="link" href="/">
+        Voltar
+      </a>
+    </main>
+
+  </div>
+{% endblock content %}

@@ -21,7 +21,9 @@
             {% if total == 1 %} ponto encontrado 
             {%else%} pontos encontrados {% endif %}
         </h4>
+
         {% else %}
+        
           <h4>
             <strong> {{total}} </strong>
               {% if total == 1 %} ponto encontrado 
@@ -31,6 +33,7 @@
               {{search}}
             </strong>
           </h4>
+
       {% endif %}
 
       <div class="cards">
@@ -43,11 +46,9 @@
               <h1>{{place.name}}</h1>
               <h3>{{place.items}}</h3>
               <p>
-                {{place.city}}, {{place.state}}
-                <br/>
-                {{place.address}}
-                <br/>
-                {{place.address2}}
+                {{place.city}}, {{place.state}} <br/>
+                {{place.address}}, {{place.address2}}  <br />
+                CEP {{place.cep}}
               </p>
             </div>
           </div>
@@ -56,7 +57,13 @@
       </div>
     
     {% else %}
-      <h4><strong>Nenhum</strong> local encotrado</h4>
+      {% if viewAll %}
+        <h4><strong>Nenhum</strong> local registrado</h4>
+        
+        {% else %}
+          <h4><strong>Nenhum</strong> local encontrado</h4>
+      {% endif %}
+
     {% endif %}
 
   </main>
